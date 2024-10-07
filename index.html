@@ -40,11 +40,32 @@
       .font {
         font-family: "Poppins", sans-serif;
       }
+
+      /* spinner styling */
+      #spinner {
+        display: none;
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top: 4px solid #000;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 15px auto;
+      }
+      /* spinner animation */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
     <!-- Section header -->
-    <header class="container mx-auto">
+    <header class="container mx-auto mb-7 md:mb-8 lg:mb-10">
       <!-- *navbar -->
       <nav class="my-3 md:my-5">
         <div class="navbar">
@@ -94,9 +115,56 @@
       </section>
     </header>
     <!-- section: main -->
-    <main></main>
+    <main class="">
+      <!-- *searchbar -->
+      <section class="container mx-auto">
+        <h2
+          class="font-bold text-center text-2xl md:text-3xl lg:text-4xl text-color-title mb-3 md:mb-7"
+        >
+          Search your phone
+        </h2>
+        <div class="flex justify-center gap-3">
+          <input
+            id="search-box"
+            type="text"
+            placeholder="Search your Phone"
+            class="input input-bordered"
+          />
+          <button
+            onclick="handleSearch()"
+            class="bg-color-blue text-white font-bold text-base md:text-xl px-4 md:px-10 py-3 md:py-2 lg:py-2 rounded-lg mb-5 md:mb-6 lg:mb-8"
+          >
+            Search
+          </button>
+        </div>
+
+        <div class="text-center">
+          <button onclick="handleShowAll()" class="btn bg-red-500">
+            Show All
+          </button>
+        </div>
+      </section>
+
+      <!-- section phone container -->
+      <div
+        id="phones-container"
+        class="flex justify-around items-center flex-wrap"
+      >
+        <!-- *spinner -->
+        <div id="spinner" class=""></div>
+        <!-- *phones card -->
+      </div>
+
+      <!-- *modal -->
+      <!-- Open the modal using ID.showModal() method -->
+
+      <div id="modal-container"></div>
+    </main>
 
     <!-- Section:footer -->
     <footer></footer>
+
+    <!-- script:lkinking JS files -->
+    <script src="./js/index.js"></script>
   </body>
 </html>
