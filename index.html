@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,6 +19,22 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- script: for customising font color in the project -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              "color-title": "#100F0F",
+              "color-description": "#706F6F",
+              "color-40": "#403F3F",
+              "color-blue": "#0D6EFD",
+            },
+          },
+        },
+      };
+    </script>
     <!-- *styling -->
     <style>
       .font {
@@ -26,5 +42,61 @@
       }
     </style>
   </head>
-  <body></body>
+  <body>
+    <!-- Section header -->
+    <header class="container mx-auto">
+      <!-- *navbar -->
+      <nav class="my-3 md:my-5">
+        <div class="navbar">
+          <div class="navbar-start">
+            <div class="w-[30px] rounded">
+              <img
+                class="w-full rounded"
+                src="./asset/logo_to_be_used.jpg"
+                alt=""
+              />
+            </div>
+            <a class="btn btn-ghost text-xl md:text-2xl font-bold text-color-40"
+              >Hot Gadgets</a
+            >
+          </div>
+
+          <div class="navbar-end">
+            <button
+              class="bg-color-blue text-white font-bold text-base md:text-xl px-4 md:px-10 py-2 md:py-3 rounded-lg"
+            >
+              Sign up
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- *banner -->
+      <section class="flex flex-col justify-center items-center text-center">
+        <h2
+          class="font-bold text-4xl md:text-4xl lg:text-6xl text-color-title mb-3 md:mb-6"
+        >
+          Apple Iphone 13 Pro Max
+        </h2>
+        <p class="text-color-description max-w-[738px] mb-4 md:mb-8">
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected humou.
+        </p>
+
+        <button
+          class="bg-color-blue text-white font-bold text-base md:text-xl px-4 md:px-10 py-2 md:py-3 rounded-lg mb-5 md:mb-6 lg:mb-8"
+        >
+          Buy Now
+        </button>
+        <div>
+          <img class="hidden md:block" src="./asset/banner_group.png" alt="" />
+          <img class="block md:hidden" src="./asset/banner.png" alt="" />
+        </div>
+      </section>
+    </header>
+    <!-- section: main -->
+    <main></main>
+
+    <!-- Section:footer -->
+    <footer></footer>
+  </body>
 </html>
